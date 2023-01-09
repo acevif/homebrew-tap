@@ -3,8 +3,7 @@ class Ignore < Formula
 
   desc "Manage your .gitignore file"
   homepage "https://github.com/acevif/ignore"
-  url "https://github.com/acevif/ignore/archive/0.2.1.tar.gz"
-  sha256 "9590b603e727b37b60ed4ac8a09418233bd8033d38d5aa5ec3a65895911365b9"
+  url "https://github.com/acevif/ignore/archive/0.2.2.tar.gz"
   license "Unlicense"
 
   def install
