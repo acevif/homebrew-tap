@@ -8,10 +8,20 @@ class Ignore < Formula
   license "Unlicense"
   depends_on "yq"
 
+  conflicts_with "ignore-rs", because: "both install 'ignore' binary"
+
   def install
     bin.install "ignore"
   end
 
   test do
+    # Test version output
+    assert_match "ignore", shell_output("#{bin}/ignore --version")
+
+    # Test basic functionality with Ignorefile
+    (testpath/"Ignorefile").write("Node\n")
+    system bin/"ignore", "update"
+    assert_predicate testpath/".gitignore", :exist?
+    assert_match "node_modules", (testpath/".gitignore").read
   end
 end

@@ -7,6 +7,8 @@ class IgnoreRs < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "ignore", because: "both install 'ignore' binary"
+
   def install
     cd "rust" do
       system "cargo", "install", "--locked", "--root", prefix, "--path", "."
@@ -14,6 +16,13 @@ class IgnoreRs < Formula
   end
 
   test do
+    # Test version output
     assert_match "ignore", shell_output("#{bin}/ignore --version")
+
+    # Test basic functionality with Ignorefile
+    (testpath/"Ignorefile").write("Node\n")
+    system bin/"ignore", "update"
+    assert_predicate testpath/".gitignore", :exist?
+    assert_match "node_modules", (testpath/".gitignore").read
   end
 end
