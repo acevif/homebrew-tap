@@ -2,7 +2,7 @@ class IgnoreRs < Formula
   desc "Manage your .gitignore file (Rust version)"
   homepage "https://github.com/acevif/ignore"
   url "https://github.com/acevif/ignore/archive/refs/tags/0.3.0.tar.gz"
-  sha256 "PLACEHOLDER_SHA256_TO_BE_CALCULATED_AFTER_TAG_CREATION"
+  sha256 "placeholder_sha256_to_be_calculated_after_tag_creation"
   license "Unlicense"
 
   depends_on "rust" => :build
