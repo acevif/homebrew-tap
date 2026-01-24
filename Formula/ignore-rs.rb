@@ -7,7 +7,8 @@ class IgnoreRs < Formula
 
   depends_on "rust" => :build
 
-  conflicts_with "ignore", because: "both install 'ignore' binary"
+  conflicts_with "ignore", because: "both provide 'ignore' command"
+  conflicts_with "ignore-sh", because: "both provide 'ignore' command"
 
   def install
     cd "rust" do

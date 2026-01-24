@@ -7,7 +7,8 @@ class IgnoreSh < Formula
 
   depends_on "yq"
 
-  conflicts_with "ignore-rs", because: "both install 'ignore' binary"
+  conflicts_with "ignore", because: "both provide 'ignore' command"
+  conflicts_with "ignore-rs", because: "both provide 'ignore' command"
 
   def install
     bin.install "ignore"
