@@ -1,8 +1,8 @@
 class IgnoreSh < Formula
   desc "Manage your .gitignore file (Shell version)"
   homepage "https://github.com/acevif/ignore"
-  url "https://github.com/acevif/ignore/archive/refs/tags/0.3.1.tar.gz"
-  sha256 "9d12a03e25b15f19c0c5f9e4d4c12491f03de17fce2959ea1bd2483839831a13"
+  url "https://github.com/acevif/ignore/archive/refs/tags/0.3.2.tar.gz"
+  sha256 "422002a68cb1daa23caa825332d94ed425c5b18b20e27c6e1ecd10286d6919ab"
   license "Unlicense"
 
   depends_on "yq"
