@@ -1,20 +1,23 @@
 class Ignore < Formula
-  desc "Manage your .gitignore file"
+  desc "Manage your .gitignore file (Rust version)"
   homepage "https://github.com/acevif/ignore"
   url "https://github.com/acevif/ignore/archive/refs/tags/0.3.1.tar.gz"
   sha256 "9d12a03e25b15f19c0c5f9e4d4c12491f03de17fce2959ea1bd2483839831a13"
   license "Unlicense"
 
-  depends_on "yq"
-
-  conflicts_with "ignore-rs", because: "both provide 'ignore' command"
-  conflicts_with "ignore-sh", because: "both provide 'ignore' command"
+  depends_on "rust" => :build
 
   def install
-    bin.install "ignore"
+    cd "rust" do
+      system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    end
   end
 
   test do
+    # Test version output
+    assert_match "ignore", shell_output("#{bin}/ignore --version")
+
+    # Test basic functionality with Ignorefile
     (testpath/"Ignorefile").write("Node\n")
     system bin/"ignore", "update"
     assert_predicate testpath/".gitignore", :exist?
