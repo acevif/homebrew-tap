@@ -1,8 +1,8 @@
 class Ignore < Formula
   desc "Manage your .gitignore file"
   homepage "https://github.com/acevif/ignore"
-  url "https://github.com/acevif/ignore/archive/refs/tags/0.3.2.tar.gz"
-  sha256 "422002a68cb1daa23caa825332d94ed425c5b18b20e27c6e1ecd10286d6919ab"
+  url "https://github.com/acevif/ignore/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "87204070f09a6ea896faeaa5825598d04ba1b2df811975b224d6aef44a67887d"
   license "Unlicense"
 
   depends_on "yq"
