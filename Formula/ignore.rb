@@ -1,5 +1,5 @@
 class Ignore < Formula
-  desc "Create .gitignore from GitHub/TopTal templates and patterns in Ignorefile"
+  desc "Create `.gitignore` from GitHub/TopTal templates and patterns in `Ignorefile`"
   homepage "https://github.com/acevif/ignore"
   url "https://github.com/acevif/ignore/archive/refs/tags/0.4.0.tar.gz"
   sha256 "87204070f09a6ea896faeaa5825598d04ba1b2df811975b224d6aef44a67887d"
